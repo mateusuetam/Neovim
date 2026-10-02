@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-options.my.neovim.enable =
-lib.mkEnableOption "Bundle do Neovim";
+options.my.neovim.enable = lib.mkEnableOption "Bundle do Neovim";
 
 config = lib.mkIf config.my.neovim.enable {
 
@@ -24,6 +23,8 @@ telescope-nvim
 ];
 };
 };
+
+runtime."lua".source = ./.config/nvim/lua;
 };
 };
 }
